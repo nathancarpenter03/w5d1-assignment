@@ -61,9 +61,9 @@ rows.forEach(function(row) {
     var object = {};
     object.id = Number(row.children[0].innerText.replace(/,/g, ''));
     object.firstName = row.children[1].innerText;
-    object.firstName = row.children[2].innerText;
-    object.firstName = row.children[3].innerText;
-    object.firstName = row.children[4].innerText;
+    object.lastName = row.children[2].innerText;
+    object.department = row.children[3].innerText;
+    object.client = row.children[4].innerText;
 })
 
 // 10. Make each word in the table capitalized.
