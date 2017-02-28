@@ -1,11 +1,11 @@
 // 1. Count the number of records in the "Current Quarter Details" table.
-var numRecords = document.querySelectorAll('tr');
+var numRecords = document.querySelectorAll('tbody tr');
 
-console.log(numRecords.length-1);
+console.log(numRecords.length);
 
 // 2. Set each dashboard image to different images, one for each season. Make sure you also set the alt="" attribute with an appropriate description.
 
-var quarterImages = document.querySelectorAll('.placeholder img');
+var quarterImages = document.querySelectorAll('img');
 
     quarterImages[0].src = 'https://unsplash.it/100/100?image=424';
     quarterImages[1].src = 'https://unsplash.it/100/100?image=373';
@@ -53,6 +53,18 @@ tableHeaders[3].innerHTML = 'Department';
 tableHeaders[4].innerHTML = 'Client';
 
 // 9. Make an array of objects, each object representing a single row in the table. Remove the commas from the ID column and convert it to an actual Number data type. Example: [{id: 1001, firstName: 'Lorem', lastName: 'ipsum', department: 'dolor', client: 'sit'}]
+
+var data = [];
+var rows = document.querySelectorAll('tbody tr');
+
+rows.forEach(function(row) {
+    var object = {};
+    object.id = Number(row.children[0].innerText.replace(/,/g, ''));
+    object.firstName = row.children[1].innerText;
+    object.firstName = row.children[2].innerText;
+    object.firstName = row.children[3].innerText;
+    object.firstName = row.children[4].innerText;
+})
 
 // 10. Make each word in the table capitalized.
 var tableWords = document.querySelectorAll('td');
