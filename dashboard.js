@@ -64,7 +64,11 @@ rows.forEach(function(row) {
     object.lastName = row.children[2].innerText;
     object.department = row.children[3].innerText;
     object.client = row.children[4].innerText;
+
+    data.push(object);
 })
+
+console.log(data);
 
 // 10. Make each word in the table capitalized.
 var tableWords = document.querySelectorAll('td');
